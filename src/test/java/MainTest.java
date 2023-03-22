@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
     @Test
-    public void fileName_success() {
+    public void readStringFileNameSuccessTest() {
         System.out.println("fileName_success");
         String expected = "new_data.json";
         String actual = "new_data.json";
@@ -12,7 +12,7 @@ public class MainTest {
     }
 
     @Test
-    public void fileName_isEmpty() {
+    public void readStringFileNameIsEmptyTest() {
         System.out.println("fileName_isEmpty");
         String expected = "";
         String actual = "";
@@ -20,7 +20,7 @@ public class MainTest {
     }
 
     @Test
-    public void fileName_isNotEmpty() {
+    public void readStringFileNameIsNotEmptyTest() {
         System.out.println("fileName_isNotEmpty");
         String expected = "";
         String actual = "new_data.json";

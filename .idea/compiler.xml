@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Using JUnit" />
+        <module name="Using_JUnit" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Using_JUnit" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
