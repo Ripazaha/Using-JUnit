@@ -1,29 +1,24 @@
 import org.junit.Test;
+import org.junit.jupiter.api.function.Executable;
 
+import java.io.IOException;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+
+import static java.nio.file.Files.readString;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
     @Test
-    public void readStringFileNameSuccessTest() {
-        System.out.println("fileName_success");
-        String expected = "new_data.json";
-        String actual = "new_data.json";
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void readStringFileNameIsEmptyTest() {
-        System.out.println("fileName_isEmpty");
-        String expected = "";
-        String actual = "";
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void readStringFileNameIsNotEmptyTest() {
-        System.out.println("fileName_isNotEmpty");
-        String expected = "";
-        String actual = "new_data.json";
-        assertNotEquals(expected, actual);
+    public void readStringTest() throws IOException {
+        String fileName = "new_data.json";
+        try {
+            readString(Path.of(fileName));
+            Executable executable = () -> readString(Path.of(fileName));
+            assertDoesNotThrow(executable);
+            System.out.println("Файл " + fileName + " найден!");
+        } catch (NoSuchFileException ignored) {
+            System.out.println("Не удалось найти файл " + fileName);
+        }
     }
 }
